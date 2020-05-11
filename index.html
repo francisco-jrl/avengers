@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--VUE-->
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+    <!-- Bowlby One SC | Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+
+    <!-- Questrial | Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    <!--Normalización CSS para evitar errores-->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Hoja de estilos | CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!--CSS Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- SEO META -->
+    <meta name="Esta página esta diseañda para los vengadores y humanos del planeta Tierra que quieran saber que es esta organización"
+        content="Podra encontrar información de los Vengadores, como los trabajos que realizan normalmente.">
+
+    <!--Titulo de la Página-->
+    <title>AVENGERS ASSEMBLE | VENGADORES UNIDOS</title>
+</head>
+
+<body>
+
+    <!-- Pantalla de carga -->
+    <div id="contenedor_carga">
+        <div id="carga">
+            <img src="img/avengers_logo.gif" alt="avengers_logo">
+        </div>
+    </div>
+    <!--Fin de pantalla de carga-->
+
+
+    <!-- Contenido de la pagina -->
+    <div class="contenedor" id="app">
+        <!-- Barra de Navegación -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" class="d-inline-block align-top logo-img" alt="logo-ebuy">
+            </a>
+
+            <a class="navbar-brand mb-0 h1" href="index.html"><h1 class="title-nav">AVENGERS ASSEMBLE</h1></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse separar" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <router-link class="nav-link link" to="/">Inicio</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link link" to="/quienes_somos">¿Quienes Somos?</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link link" to="/vengadores">Vengadores</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link link" to="/gemas">Gemas</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link link" to="/villanos">Villanos</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link link" to="/contacto">Contacto</router-link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Fin de Barra de Navegación-->
+
+        <!--Contenido-->
+        <div class="contenido">
+            <router-view></router-view>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+        <p>Iniciativa Vengadores 2020 &copy;</p>
+    </div>
+
+    <!--audio src="the-avengers.mp3" autoplay loop style="visibility: hidden;"></audio-->
+
+</body>
+<!--Vistas Vue-->
+<script src="vistas/inicio.vue.js"></script>
+<script src="vistas/quienes_somos.vue.js"></script>
+<script src="vistas/vengadores.vue.js"></script>
+<script src="vistas/gemas.vue.js"></script>
+<script src="vistas/villanos.vue.js"></script>
+<script src="vistas/contacto.vue.js"></script>
+
+<!-- Componentes -->
+<script src="componente/crear_vengador.js"></script>
+<script src="componente/cambiar_vengador.js"></script>
+<script src="componente/crear_gema.js"></script>
+<script src="componente/cambiar_gema.js"></script>
+<script src="componente/crear_villano.js"></script>
+<script src="componente/cambiar_villano.js"></script>
+<script src="componente/formulario.js"></script>
+
+<script type="text/javascript">
+    Vue.use(VueRouter);
+
+    var routes = [
+        { path: '/', component: Inicio, name: "Inicio" },
+        { path: '/quienes_somos', component: QuienesSomos },
+        { path: '/vengadores', component: Vengadores, name: "Vengadores" },
+        { path: '/crear_vengador', component: CrearVengador, name: "crear_vengador" },
+        { path: '/cambiar_vengador/:id', component: CambiarVengador, name: "cambiar_vengador" },
+        { path: '/gemas', component: Gemas, name: "Gemas" },
+        { path: '/crear_gema', component: CrearGema, name: "crear_gema" },
+        { path: '/cambiar_gema/:id', component: CambiarGema, name: "cambiar_gema" },
+        { path: '/villanos', component: Villanos, name: "Villanos" },
+        { path: '/crear_villano', component: CrearVillano, name: "crear_villano" },
+        { path: '/cambiar_villano/:id', component: CambiarVillano, name: "cambiar_villano" },
+        { path: '/contacto', component: Contacto, name: "Contacto" }
+    ];
+
+    var router = new VueRouter({
+        routes: routes,
+    });
+
+    var app = new Vue({
+        el: '#app',
+        router: router
+    });
+</script>
+
+<!--Bootstrap-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</html>

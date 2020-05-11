@@ -1,0 +1,40 @@
+{
+    "avengers": [
+        {
+            "nombres": "Peter Benjamin",
+            "apellidos": "Parker",
+            "nombre_superheroe": "Spiderman",
+            "superpoder": "Superpoderes arácnidos (mutado).",
+            "trabajo_actual": "Fotógrafo",
+            "telefono": "5869298",
+            "email": "spiderman@vengadores.com"
+        }
+    ],
+
+    "gemas" : [
+        {
+            "nombre" : "Gema del Alma",
+            "poder" : "Robar habilidades de otros seres y añadirlas al portador.",
+            "portador" : "High Evolutionary",
+            "ubicacion" : "planeta Vormir"
+        }
+    ],
+
+    "villanos" : [
+        {
+            "nombre": "Thanos The Titan",
+            "superpoder": "Inmortalidad",
+            "origen": "Titán",
+            "derrotado_por": "Los Vengadores"
+        }
+    ],
+    
+    "contacto" : [
+        {
+            "seleccionado" : "Peter",
+            "descripcion" : "Necesito un fotógrafo para una boda",
+            "telefono" : "40398124",
+            "email" : "francisco.joseranleo356@gmail.com"
+        }
+    ]
+}
